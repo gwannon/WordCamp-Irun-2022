@@ -17,25 +17,34 @@
 /*
  *
  * Irun WordCamp 2022:
- * Permite modificar los titles de las páginas con Yoast SEO y una hoja de calculo de Google Docs
+ * Permite modificar los titles y descripciones de Yoast SEO de las páginas y postsa través de una hoja de calculo de Google Docs
  * 
  */
 
 function gd_2_ys_register_endpoints() {
   register_rest_route( 'wp', '/update-seo', array(
-      'methods' => 'PUT',
+      'methods' => 'POST',
       'callback' => 'gd_2_ys_update_seo',
-      /*'permission_callback' => function ($request) {
-        if (current_user_can('manage_options')) return true;
-      }*/
     ) 
   );
 }
 
 function gd_2_ys_update_seo( $request ) {
   $body = $request->get_body_params();
-  if(update_post_meta(get_page_by_path($body['slug'])->ID, '_yoast_wpseo_metadesc', $body['desc'])) return true;
-  return false;
+  $object = get_page_by_path($body['slug']);
+  print_r($object->ID);
+  if(update_post_meta($object->ID, '_yoast_wpseo_title', $body['title'])) {
+    $status['title'] = "Modificado";
+  } else {
+    $status['title'] = "NO modificado";
+  }
+  
+  if(update_post_meta($object->ID, '_yoast_wpseo_metadesc', $body['desc'])) {
+    $status['desc'] = "Modificado";
+  } else {
+    $status['desc'] = "NO modificado";
+  }
+  
+  return $status;
 }
-
 add_action( 'rest_api_init', 'gd_2_ys_register_endpoints' );

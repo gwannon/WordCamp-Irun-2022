@@ -1,12 +1,11 @@
 function updateYoastMetaDescription() {
   var data = SpreadsheetApp.getActiveSheet().getDataRange().getValues();
   for (row in data) {
-      Logger.log(data[row]);
       var row = data[row];
       var options = {
-          'method': 'put',
-          'payload': { slug:row[0], desc:row[1]},
+          'method': 'post',
+          'payload': {slug:row[1], title:row[2], desc:row[3]},
       };
-      UrlFetchApp.fetch('https://pruebas.enuttisworking.com/wp-json/wp/update-seo', options);
+      Logger.log(UrlFetchApp.fetch(row[0]+'/wp-json/wp/update-seo', options));
   }
 }
