@@ -6,6 +6,7 @@ function updateYoastMetaDescription() {
       var options = {
           'method': 'post',
           'payload': {slug:row[1], title:row[2], desc:row[3]},
+          'headers': {token: 'TU TOKEN VA AQUÍ'},
       };
       Logger.log(UrlFetchApp.fetch(row[0]+'/wp-json/wp/update-seo', options));
     }
