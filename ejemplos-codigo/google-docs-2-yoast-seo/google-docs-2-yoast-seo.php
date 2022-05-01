@@ -38,16 +38,20 @@ function gs_2_ys_register_endpoints() {
 function gs_2_ys_update_seo( $request ) {
   $body = $request->get_body_params();
   $object = get_page_by_path($body['slug']);
-  if(isset($body['title']) && $body['title'] != '' && update_post_meta($object->ID, '_yoast_wpseo_title', $body['title'])) {
-    $status['title'] = "Modificado";
+  if($object->ID) {
+    if(isset($body['title']) && $body['title'] != '' && update_post_meta($object->ID, '_yoast_wpseo_title', $body['title'])) {
+      $status['title'] = "Modificado";
+    } else {
+      $status['title'] = "NO modificado";
+    } 
+    if(isset($body['desc']) && $body['desc'] != '' && update_post_meta($object->ID, '_yoast_wpseo_metadesc', $body['desc'])) {
+      $status['desc'] = "Modificado";
+    } else {
+      $status['desc'] = "NO modificado";
+    }  
+    return $status;
   } else {
-    $status['title'] = "NO modificado";
-  } 
-  if(isset($body['desc']) && $body['desc'] != '' && update_post_meta($object->ID, '_yoast_wpseo_metadesc', $body['desc'])) {
-    $status['desc'] = "Modificado";
-  } else {
-    $status['desc'] = "NO modificado";
-  }  
-  return $status;
+    return new WP_REST_Response(array("error" => "1", "message" => "No existe un objecto con ese slug"), 404);
+  }
 }
 add_action( 'rest_api_init', 'gs_2_ys_register_endpoints' );
