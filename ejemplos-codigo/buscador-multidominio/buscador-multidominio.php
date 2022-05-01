@@ -30,7 +30,7 @@ function buscador_multidominio ($params = array(), $content = null) {
   </form>
   <div id="buscador_multidominio_resultados"></div>
   <script>
-     jQuery("#buscador_multidominio").submit(function(e) {
+    jQuery("#buscador_multidominio").submit(function(e) {
       e.preventDefault();
       if (jQuery("#buscador_multidominio input[name=mds]").val() != '') {
         jQuery.ajax({
