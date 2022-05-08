@@ -49,9 +49,9 @@ function buscador_multidominio ($params = array(), $content = null) {
           },
           success : function(json) {
             jQuery("#buscador_multidominio_resultados").empty();
-            if(json.lenght) {
+            if(json.length) {
               json.forEach(function(data, index) {
-                jQuery("#buscador_multidominio_resultados").append("<h3><a href='"+data.link+"'>"+data.title+"</a></h3><p>"+data.date+" - "+data.dominio+"</p>"+data.excerpt+"<hr/>");
+		           jQuery("#buscador_multidominio_resultados").append("<h3><a href='"+data.link+"'>"+data.title+"</a></h3><p>"+data.date+" - "+data.dominio+"</p>"+data.excerpt+"<hr/>");
               });
             } else jQuery("#buscador_multidominio_resultados").append("<?=__("No results.", 'buscador_multidominio') ?>");
           },
@@ -102,3 +102,11 @@ function buscador_multidominio_ajax(){
 }
 add_action('wp_ajax_nopriv_buscador_multidominio', 'buscador_multidominio_ajax');
 add_action('wp_ajax_buscador_multidominio', 'buscador_multidominio_ajax');
+
+
+function buscador_multidominio_load_jquery() {
+  if ( ! wp_script_is( 'jquery', 'enqueued' )) {
+    wp_enqueue_script( 'jquery' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'buscador_multidominio_load_jquery' );
