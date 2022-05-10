@@ -18,12 +18,7 @@
  *
  * Irun WordCamp 2022:
  * Permite modificar los titles y descripciones de Yoast SEO de las páginas y posts a través de una hoja de calculo de Google Sheets
- * 
- */
-
-/*
- *
- * ToDo: Validación por contraseña.
+ * En Ajustes > Admin GS2YS poedemos configurar un token de seguridad que debemos usar el AppScript de Google Sheets
  * 
  */
 

@@ -2,7 +2,7 @@
 /**
  *
  * Irun WordCamp 2022:
- * Generador de html para mandar por MailChimp y similares
+ * Generador de html para mandar por MailChimp, MailRelay, HubSpot, Active Campaign, ...
  * 
  */
 

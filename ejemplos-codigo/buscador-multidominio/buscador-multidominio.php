@@ -2,7 +2,7 @@
 /**
  * Plugin Name: API Rest Buscador Multidominio
  * Plugin URI:  https://github.com/gwannon/WordCamp-Irun-2022
- * Description: Código corto que genera un buscador multidominio
+ * Description: Código corto que genera un buscador multidominio consultando la API REST /wp-json/wp/v2/posts?search=[busqueda]
  * Version:     1.0
  * Author:      gwannon
  * Author URI:  https://github.com/gwannon
@@ -17,7 +17,7 @@
 /*
  *
  * Irun WordCamp 2022:
- * Código corto que genera un buscador multidominio
+ * Código corto que genera un buscador multidominio consultando la API REST /wp-json/wp/v2/posts?search=[busqueda]
  * [buscador_multidominio dominios="https://realunionclub.com,http://erroibide.org,https://www.cdbidasoa.eus,https://cdsanmarcialirun.com" per_page="10"]
  * 
  */

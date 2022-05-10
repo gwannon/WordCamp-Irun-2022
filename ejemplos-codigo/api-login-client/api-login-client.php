@@ -2,7 +2,7 @@
 /**
  * Plugin Name: API Rest Login Cliente
  * Plugin URI:  https://github.com/gwannon/WordCamp-Irun-2022
- * Description: Código corto que genera un formulario que se logea contra otro wordpress que tenga el plugin api-login.php
+ * Description: Código corto que genera un formulario que se loguea contra otro WordPress que tenga el plugin api-login.php
  * Version:     1.0
  * Author:      gwannon
  * Author URI:  https://github.com/gwannon
@@ -17,7 +17,7 @@
 /*
  *
  * Irun WordCamp 2022:
- * Código corto que genera un formulario que se logea contra otro wordpress que tenga el plugin api-login.php
+ * Código corto que genera un formulario que se loguea contra otro WordPress que tenga el plugin api-login.php
  * [api-login-client dominio="https://midominio.com"]<h1>Puedes ver esto por habeer metido un usuario y contraseña correcto.</h1>[/api-login-client]
  * 
  */

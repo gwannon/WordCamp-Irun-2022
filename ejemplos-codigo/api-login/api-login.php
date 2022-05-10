@@ -17,8 +17,9 @@
 /*
  *
  * Irun WordCamp 2022:
- * Permite crear un endpoint /wp-json/wp/login para hacer logeos
+ * Permite crear un endpoint /wp-json/wp/login GET para hacer logeos pasando los parámetros username y password
  * https://stackoverflow.com/questions/13679001/register-login-user-with-wordpress-json-api
+ * ¡¡¡OJO!!!! Nada de implementar este ejemplo sin securizarlo. Ahora mismo es un agujero de seguridad muy grande.
  * 
  */
 
