@@ -1,5 +1,5 @@
 # Ponencia para la Irún WordCamp 2022
-## 1º ejemplo. Buscador multidominio
+## 1er ejemplo. Buscador multidominio
 Con un simple código corto y la ayuda de la API Rest de WordPress podemos crear un buscador multidominio.
 /buscador-multidominio/
 
@@ -7,7 +7,7 @@ Con un simple código corto y la ayuda de la API Rest de WordPress podemos crear
 A través de la API podemos crear un generador de newsletter simple y sencillo.
 /generador-html-newsletters/
 
-## 3º ejemplo. Sistema de logeo interdominios.
+## 3er ejemplo. Sistema de logeo interdominios.
 Podemos crear un sistema de logeo que permita a otros plugins logearse contra ese sistema de logeo y mostrar contenido especial.
 /api-login/
 /api-login-client/
